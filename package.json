@@ -1,0 +1,73 @@
+{
+  "name": "@react-cmpt/use-throttle",
+  "version": "0.1.0",
+  "description": "The throttle value/function hook for react",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rm -rf ./lib/ && tsc -d --project tsconfig.json --outDir ./lib/",
+    "test": "jest -c jest.json",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "prettier": "prettier --write './src/**/*.{ts,tsx}' --config ./.prettierrc",
+    "prepare": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-cmpt/use-throttle.git"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "throttle",
+    "useThrottle",
+    "useThrottleFn",
+    "use-throttle",
+    "callback"
+  ],
+  "author": "wangcch <wangcch.cc@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "@testing-library/react-hooks": "^3.1.0",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^25.2.1",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "emotion": "^10.0.17",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "gh-pages": "^2.1.1",
+    "husky": "^4.2.3",
+    "jest": "^25.3.0",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-test-renderer": "^16.11.0",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
