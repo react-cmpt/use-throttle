@@ -21,7 +21,7 @@ throttle value
 | option | type   | default | explain |
 | ------ | ------ | ------- | ------- |
 | value  | any    |         |         |
-| wait   | number | 200     |         |
+| wait   | number | 0       |         |
 
 | return | type | default       | explain |
 | ------ | ---- | ------------- | ------- |
@@ -44,7 +44,7 @@ throttle function
 | option | type     | default | explain |
 | ------ | -------- | ------- | ------- |
 | fn     | function |         |         |
-| wait   | number   | 200     |         |
+| wait   | number   | 0       |         |
 
 | return   | type     | default | explain |
 | -------- | -------- | ------- | ------- |

@@ -7,7 +7,7 @@ import useThrottleFn from "./useThrottleFn";
  * @param value
  * @param wait number @default 200
  */
-export default function useThrottle<T>(value: T, wait = 200): T {
+export default function useThrottle<T>(value: T, wait = 0): T {
   const [state, setState] = useState<T>(value);
 
   const { callback } = useThrottleFn((v: T) => {

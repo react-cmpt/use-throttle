@@ -4,11 +4,11 @@ import { useCallback, useRef, useEffect } from "react";
  * useThrottleFn
  *
  * @param fn function
- * @param wait number @default 200
+ * @param wait number @default 0
  */
 export default function useThrottleFn<T extends any[]>(
   fn: (...args: T) => any,
-  wait = 200
+  wait = 0
 ): { callback: (...args: T) => void; cancel: () => void } {
   const timer = useRef<ReturnType<typeof setTimeout>>();
   const fnRef = useRef(fn);
