@@ -54,7 +54,7 @@ export default function useThrottleFn<T extends any[]>(
     [wait]
   );
 
-  useEffect(() => callback, [callback]);
+  useEffect(() => cancel, [cancel]);
 
   return {
     callback,
