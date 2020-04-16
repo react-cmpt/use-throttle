@@ -1,6 +1,6 @@
 import { useCallback, useRef, useEffect } from "react";
 
-export type throttleOptions = {
+export type ThrottleOptions = {
   /** Specify invoking on the leading edge of the timeout. */
   leading?: boolean;
 };
@@ -15,11 +15,11 @@ export type throttleOptions = {
 export default function useThrottleFn<T extends any[]>(
   fn: (...args: T) => any,
   wait = 0,
-  options?: throttleOptions
+  options?: ThrottleOptions
 ): { callback: (...args: T) => void; cancel: () => void } {
   const timer = useRef<ReturnType<typeof setTimeout>>();
   const fnRef = useRef(fn);
-  const optionsRef = useRef<throttleOptions | undefined>(options);
+  const optionsRef = useRef<ThrottleOptions | undefined>(options);
   const currentArgs = useRef<any>();
 
   fnRef.current = fn;
