@@ -18,10 +18,11 @@ yarn add @react-cmpt/use-throttle
 
 throttle value
 
-| option | type   | default | explain |
-| ------ | ------ | ------- | ------- |
-| value  | any    |         |         |
-| wait   | number | 0       |         |
+| option  | type                 | default | explain                                             |
+| ------- | -------------------- | ------- | --------------------------------------------------- |
+| value   | any                  |         |                                                     |
+| wait    | number               | 0       |                                                     |
+| options | { leading: boolean } |         | Specify invoking on the leading edge of the timeout |
 
 | return | type | default       | explain |
 | ------ | ---- | ------------- | ------- |
@@ -41,10 +42,11 @@ const Demo = ({ value }) => {
 
 throttle function
 
-| option | type     | default | explain |
-| ------ | -------- | ------- | ------- |
-| fn     | function |         |         |
-| wait   | number   | 0       |         |
+| option  | type                 | default | explain                                             |
+| ------- | -------------------- | ------- | --------------------------------------------------- |
+| fn      | function             |         |                                                     |
+| wait    | number               | 0       |                                                     |
+| options | { leading: boolean } |         | Specify invoking on the leading edge of the timeout |
 
 | return   | type     | default | explain |
 | -------- | -------- | ------- | ------- |
