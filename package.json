@@ -18,6 +18,7 @@
   "keywords": [
     "react",
     "hooks",
+    "use",
     "throttle",
     "useThrottle",
     "useThrottleFn",

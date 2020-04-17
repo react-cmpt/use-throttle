@@ -24,15 +24,15 @@ throttle value
 | wait    | number               | 0       |                                                     |
 | options | { leading: boolean } |         | Specify invoking on the leading edge of the timeout |
 
-| return | type | default       | explain |
-| ------ | ---- | ------------- | ------- |
-| value  | any  | options.value |         |
+| return | type | default | explain |
+| ------ | ---- | ------- | ------- |
+| value  | any  |         |         |
 
 ```tsx
 import { useThrottle } from "@react-cmpt/use-throttle";
 
 const Demo = ({ value }) => {
-  const tValue = useThrottle(value);
+  const tValue = useThrottle(value, 200);
 
   // ...
 };
@@ -59,7 +59,7 @@ import { useThrottleFn } from "@react-cmpt/use-throttle";
 const Demo = () => {
   const { callback, cancel } = useThrottleFn(() => {
     console.log("click");
-  });
+  }, 200);
 
   return <button onClick={callback}>++</button>;
 };
