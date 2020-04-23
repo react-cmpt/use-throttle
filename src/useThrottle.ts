@@ -5,7 +5,7 @@ import useThrottleFn, { ThrottleOptions } from "./useThrottleFn";
  * useThrottle
  *
  * @param value
- * @param wait number @default 200
+ * @param wait number @default 0
  * @param options object
  */
 export default function useThrottle<T>(
