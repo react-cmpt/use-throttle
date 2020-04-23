@@ -1,11 +1,14 @@
 {
   "name": "@react-cmpt/use-throttle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The throttle value/function hook for react",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "module": "esm/index.js",
   "scripts": {
-    "build": "rm -rf ./lib/ && tsc -d --project tsconfig.json --outDir ./lib/",
+    "build": "rm -rf ./lib ./esm && yarn build:cjs && yarn build:es",
+    "build:cjs": "tsc",
+    "build:es": "tsc -m ESNext --outDir ./esm",
     "test": "jest -c jest.json",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "prettier": "prettier --write './src/**/*.{ts,tsx}' --config ./.prettierrc",

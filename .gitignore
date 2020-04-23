@@ -5,6 +5,7 @@
 
 /dist
 /lib
+/esm
 
 npm-debug.log*
 yarn-debug.log*
