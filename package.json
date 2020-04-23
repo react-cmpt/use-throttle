@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "module": "esm/index.js",
+  "sideEffects": false,
   "scripts": {
-    "build": "rm -rf ./lib ./esm && yarn build:cjs && yarn build:es",
+    "build": "rm -rf ./lib/* ./esm/* && yarn build:cjs && yarn build:es",
     "build:cjs": "tsc",
     "build:es": "tsc -m ESNext --outDir ./esm",
     "test": "jest -c jest.json",
@@ -30,6 +31,10 @@
   ],
   "author": "wangcch <wangcch.cc@gmail.com>",
   "license": "MIT",
+  "files": [
+    "esm",
+    "lib"
+  ],
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.8.0",
