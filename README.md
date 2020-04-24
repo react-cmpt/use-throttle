@@ -1,6 +1,6 @@
 # use-throttle
 
-The throttle value/function hook for react
+The throttled value / function hook for react
 
 [![CI](https://github.com/react-cmpt/use-throttle/workflows/CI/badge.svg?branch=master)](https://github.com/react-cmpt/use-throttle/actions?query=workflow%3ACI)
 [![npm](https://img.shields.io/npm/v/@react-cmpt/use-throttle.svg)](https://www.npmjs.com/package/@react-cmpt/use-throttle)
@@ -16,17 +16,39 @@ yarn add @react-cmpt/use-throttle
 
 ### useThrottle
 
-throttle value
+throttled value
 
-| option  | type                 | default | explain                                             |
-| ------- | -------------------- | ------- | --------------------------------------------------- |
-| value   | any                  |         |                                                     |
-| wait    | number               | 0       |                                                     |
-| options | { leading: boolean } |         | Specify invoking on the leading edge of the timeout |
+<table>
+  <tr>
+    <th colspan="2">option</th>
+    <th>type</th>
+    <th>default</th>
+    <th>explain</th>
+  </tr>
+  <tr>
+    <td colspan="2">value</td>
+    <td>any</td>
+    <td>-</td>
+    <td>The value to throttle.</td>
+  </tr>
+  <tr>
+    <td colspan="2">wait</td>
+    <td>number</td>
+    <td>0</td>
+    <td>The number of milliseconds to throttle invocations to.</td>
+  </tr>
+  <tr>
+    <td rowspan="1">options</td>
+    <td>leading</td>
+    <td>boolean</td>
+    <td>-</td>
+    <td>Specify invoking on the leading edge of the timeout.</td>
+  </tr>
+</table>
 
-| return | type | default | explain |
-| ------ | ---- | ------- | ------- |
-| value  | any  |         |         |
+| return | type | explain                          |
+| ------ | ---- | -------------------------------- |
+| value  | any  | Returns the new throttled value. |
 
 ```tsx
 import { useThrottle } from "@react-cmpt/use-throttle";
@@ -40,18 +62,40 @@ const Demo = ({ value }) => {
 
 ### useThrottleFn
 
-throttle function
+throttled function
 
-| option  | type                 | default | explain                                             |
-| ------- | -------------------- | ------- | --------------------------------------------------- |
-| fn      | function             |         |                                                     |
-| wait    | number               | 0       |                                                     |
-| options | { leading: boolean } |         | Specify invoking on the leading edge of the timeout |
+<table>
+  <tr>
+    <th colspan="2">option</th>
+    <th>type</th>
+    <th>default</th>
+    <th>explain</th>
+  </tr>
+  <tr>
+    <td colspan="2">fn</td>
+    <td>function</td>
+    <td>-</td>
+    <td>The function to throttle.</td>
+  </tr>
+  <tr>
+    <td colspan="2">wait</td>
+    <td>number</td>
+    <td>0</td>
+    <td>The number of milliseconds to throttle invocations to.</td>
+  </tr>
+  <tr>
+    <td rowspan="1">options</td>
+    <td>leading</td>
+    <td>boolean</td>
+    <td>-</td>
+    <td>Specify invoking on the leading edge of the timeout.</td>
+  </tr>
+</table>
 
-| return   | type     | default | explain |
-| -------- | -------- | ------- | ------- |
-| callback | function |         |         |
-| cancel   | function |         |         |
+| return   | type     | explain                     |
+| -------- | -------- | --------------------------- |
+| callback | function | The new throttled function. |
+| cancel   | function | The clear timer function.   |
 
 ```tsx
 import { useThrottleFn } from "@react-cmpt/use-throttle";
