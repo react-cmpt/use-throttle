@@ -5,6 +5,12 @@ export type ThrottleOptions = {
   leading?: boolean;
 };
 
+export type ThrottleReturnResult<T extends any[]> = {
+  callback: (...args: T) => void;
+  cancel: () => void;
+  callPending: () => void;
+};
+
 /**
  * useThrottleFn
  *
@@ -16,7 +22,7 @@ export default function useThrottleFn<T extends any[]>(
   fn: (...args: T) => any,
   wait = 0,
   options?: ThrottleOptions
-): { callback: (...args: T) => void; cancel: () => void } {
+): ThrottleReturnResult<T> {
   const timer = useRef<ReturnType<typeof setTimeout>>();
   const fnRef = useRef(fn);
   const optionsRef = useRef<ThrottleOptions | undefined>(options);
@@ -54,10 +60,20 @@ export default function useThrottleFn<T extends any[]>(
     [wait]
   );
 
+  const callPending = useCallback(() => {
+    if (!timer) {
+      return;
+    }
+
+    fnRef.current(...currentArgs.current);
+    cancel();
+  }, [cancel]);
+
   useEffect(() => cancel, [cancel]);
 
   return {
     callback,
     cancel,
+    callPending,
   };
 }
