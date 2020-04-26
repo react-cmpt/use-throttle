@@ -92,10 +92,11 @@ throttled function
   </tr>
 </table>
 
-| return   | type     | explain                     |
-| -------- | -------- | --------------------------- |
-| callback | function | The new throttled function. |
-| cancel   | function | The clear timer function.   |
+| return      | type     | explain                         |
+| ----------- | -------- | ------------------------------- |
+| callback    | function | The new throttled function.     |
+| cancel      | function | The clear timer function.       |
+| callPending | function | The callback manually function. |
 
 ```tsx
 import { useThrottleFn } from "@react-cmpt/use-throttle";
