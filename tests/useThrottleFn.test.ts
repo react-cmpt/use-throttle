@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook, act } from "@testing-library/react-hooks";
 
 import useThrottleFn from "../src/useThrottleFn";
 
@@ -109,5 +109,27 @@ describe("useThrottleFn", () => {
     jest.advanceTimersByTime(200);
     expect(count).toEqual(6);
     expect(fn).toHaveBeenCalledTimes(2);
+  });
+
+  it("callPending", () => {
+    let count = 0;
+    const fn = jest.fn(props => {
+      count = props;
+    });
+    const { result } = renderHook(() => useThrottleFn(fn, 200));
+
+    result.current.callback(1);
+    result.current.callback(2);
+    result.current.callback(3);
+    jest.advanceTimersByTime(100);
+    expect(count).toEqual(0);
+    expect(fn).toHaveBeenCalledTimes(0);
+
+    act(() => {
+      result.current.callPending();
+    });
+
+    expect(count).toEqual(3);
+    expect(fn).toHaveBeenCalledTimes(1);
   });
 });
