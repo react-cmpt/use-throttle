@@ -131,5 +131,12 @@ describe("useThrottleFn", () => {
 
     expect(count).toEqual(3);
     expect(fn).toHaveBeenCalledTimes(1);
+
+    act(() => {
+      result.current.callPending();
+    });
+
+    expect(count).toEqual(3);
+    expect(fn).toHaveBeenCalledTimes(1);
   });
 });
