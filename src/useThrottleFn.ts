@@ -61,7 +61,7 @@ export default function useThrottleFn<T extends any[]>(
   );
 
   const callPending = useCallback(() => {
-    if (!timer) {
+    if (!timer.current) {
       return;
     }
 
