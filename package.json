@@ -1,6 +1,6 @@
 {
   "name": "@react-cmpt/use-throttle",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The throttled value / function hook for react",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
