@@ -14,6 +14,10 @@ The throttled value / function hook for react
 yarn add @react-cmpt/use-throttle
 ```
 
+### codesandbox
+
+[![Edit use-throttle-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/use-throttle-example-i1xz0?fontsize=14&hidenavigation=1&theme=dark)
+
 ### useThrottle
 
 throttled value
