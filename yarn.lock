@@ -577,13 +577,13 @@
   dependencies:
     type-detect "4.0.8"
 
-"@testing-library/react-hooks@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/react-hooks/-/react-hooks-3.1.0.tgz#f186c4f3b32db153d30d646faacb043ef4089807"
-  integrity sha512-mwFDHXCQiyr0tQkYU4VkcwlCzR5YQ5k1/TCrL3hPslCM5MvS6pBhbl2z4UnCMV4DOyiUUXIvoMAf5kHT/hibTg==
+"@testing-library/react-hooks@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/react-hooks/-/react-hooks-3.3.0.tgz#dc217bfce8e7c34a99c811d73d23feef957b7c1d"
+  integrity sha512-rE9geI1+HJ6jqXkzzJ6abREbeud6bLF8OmF+Vyc7gBoPwZAEVBYjbC1up5nNoVfYBhO5HUwdD4u9mTehAUeiyw==
   dependencies:
     "@babel/runtime" "^7.5.4"
-    "@types/testing-library__react-hooks" "^2.0.0"
+    "@types/testing-library__react-hooks" "^3.0.0"
 
 "@types/babel__core@^7.1.7":
   version "7.1.7"
@@ -703,10 +703,10 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
-"@types/testing-library__react-hooks@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@types/testing-library__react-hooks/-/testing-library__react-hooks-2.0.0.tgz#7b289d64945517ae8ba9cbcb0c5b282432aaeffa"
-  integrity sha512-YUVqXGCChJKEJ4aAnMXqPCq0NfPAFVsJeGIb2y/iiMjxwyu+45+vR+AHOwjJHHKEHeC0ZhOGrZ5gSEmaJe4tyQ==
+"@types/testing-library__react-hooks@^3.0.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@types/testing-library__react-hooks/-/testing-library__react-hooks-3.2.0.tgz#52f3a109bef06080e3b1e3ae7ea1c014ce859897"
+  integrity sha512-dE8iMTuR5lzB+MqnxlzORlXzXyCL0EKfzH0w/lau20OpkHD37EaWjZDz0iNG8b71iEtxT4XKGmSKAGVEqk46mw==
   dependencies:
     "@types/react" "*"
     "@types/react-test-renderer" "*"
