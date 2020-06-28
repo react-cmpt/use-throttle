@@ -37,8 +37,7 @@
   ],
   "dependencies": {},
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^3.3.0",
