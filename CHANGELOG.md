@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/react-cmpt/use-throttle/compare/v0.2.1...v0.2.2) (2020-06-28)
+
+
+### Refactor
+
+* remove `react-dom` (peerDependencies) ([0b302f9](https://github.com/react-cmpt/use-throttle/commit/0b302f9062663294a2da22b79bdf6553d7df2cd3))
+
+
+
 ## [0.2.1](https://github.com/react-cmpt/use-throttle/compare/v0.2.0...v0.2.1) (2020-06-02)
 
 
@@ -19,8 +28,18 @@
 ## [0.1.1](https://github.com/react-cmpt/use-throttle/compare/v0.1.0...v0.1.1) (2020-04-23)
 
 
+### Features
+
+* build commonjs module in lib ([cb00d34](https://github.com/react-cmpt/use-throttle/commit/cb00d347213591d53df17708050e806a0f468f49))
+
+
 
 # [0.1.0](https://github.com/react-cmpt/use-throttle/compare/v0.1.0-alpha2...v0.1.0) (2020-04-17)
+
+
+### Refactor
+
+* **useThrottleFn:** `throttleOptions` -> `ThrottleOptions` (rename) ([05ff61f](https://github.com/react-cmpt/use-throttle/commit/05ff61fb36674348be662a704796508b0dc88e90))
 
 
 
