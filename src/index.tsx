@@ -1,7 +1,7 @@
 import useThrottle from "./useThrottle";
 import useThrottleFn, {
-  ThrottleOptions,
+  ThrottleFnOptions,
   ThrottleReturnResult,
 } from "./useThrottleFn";
 
-export { useThrottle, useThrottleFn, ThrottleOptions, ThrottleReturnResult };
+export { useThrottle, useThrottleFn, ThrottleFnOptions, ThrottleReturnResult };
