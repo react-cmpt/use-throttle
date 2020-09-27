@@ -1,5 +1,15 @@
 import { useState, useEffect, useRef } from "react";
-import useThrottleFn, { ThrottleFnOptions } from "./useThrottleFn";
+import useThrottleFn, {
+  ThrottleFnOptions,
+  ControlFunctions,
+} from "./useThrottleFn";
+
+const valueComparison = <T>(left: T, right: T) => !(left === right);
+
+export interface ThrottleOptions<T> extends ThrottleFnOptions {
+  /** The function to customize comparisons. */
+  customizer?: (left: T, right: T) => boolean;
+}
 
 /**
  * useThrottle
@@ -11,24 +21,29 @@ import useThrottleFn, { ThrottleFnOptions } from "./useThrottleFn";
 export default function useThrottle<T>(
   value: T,
   wait = 0,
-  options?: ThrottleFnOptions
-): T {
+  options?: ThrottleOptions<T>
+): [T, ControlFunctions] {
+  const { customizer, ...restOptions } = options || {};
+  const notEqual =
+    typeof customizer === "function" ? customizer : valueComparison;
+
+  const prevValue = useRef<T>(value);
   const [state, setState] = useState<T>(value);
 
-  const { callback } = useThrottleFn(
+  const { callback, cancel, callPending } = useThrottleFn(
     (v: T) => {
       setState(v);
     },
     wait,
-    options
+    restOptions
   );
 
-  const callbackRef = useRef(callback);
-  callbackRef.current = callback;
-
   useEffect(() => {
-    callbackRef.current(value);
-  }, [value]);
+    if (notEqual(prevValue.current, value)) {
+      callback(value);
+      prevValue.current = value;
+    }
+  }, [callback, notEqual, value]);
 
-  return state;
+  return [state, { cancel, callPending }];
 }

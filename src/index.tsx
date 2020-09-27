@@ -1,7 +1,13 @@
-import useThrottle from "./useThrottle";
+import useThrottle, { ThrottleOptions } from "./useThrottle";
 import useThrottleFn, {
   ThrottleFnOptions,
   ThrottleReturnResult,
 } from "./useThrottleFn";
 
-export { useThrottle, useThrottleFn, ThrottleFnOptions, ThrottleReturnResult };
+export {
+  useThrottle,
+  ThrottleOptions,
+  useThrottleFn,
+  ThrottleFnOptions,
+  ThrottleReturnResult,
+};
