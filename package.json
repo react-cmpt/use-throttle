@@ -11,8 +11,8 @@
     "build:cjs": "tsc",
     "build:es": "tsc -m ESNext --outDir ./esm",
     "test": "jest -c jest.json",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "prettier": "prettier --write './src/**/*.{ts,tsx}' --config ./.prettierrc",
+    "lint": "eslint . --ext '.js,.jsx,.ts,.tsx'",
+    "prettier": "prettier --write '**/*' --config ./.prettierrc",
     "prepare": "yarn build"
   },
   "repository": {
@@ -67,8 +67,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,js}": [
-      "eslint --fix",
+    "**/*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint",
       "git add"
     ]
   }

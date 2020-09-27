@@ -63,7 +63,7 @@ describe("useThrottleFn", () => {
 
   it("callback props", () => {
     let count = 0;
-    const fn = jest.fn(props => {
+    const fn = jest.fn((props: number) => {
       count = props;
     });
     const { result } = renderHook(() => useThrottleFn(fn, 200));
@@ -84,7 +84,7 @@ describe("useThrottleFn", () => {
 
   it("Options: leading", () => {
     let count = 0;
-    const fn = jest.fn(props => {
+    const fn = jest.fn((props: number) => {
       count = props;
     });
     const { result } = renderHook(() =>
@@ -113,7 +113,7 @@ describe("useThrottleFn", () => {
 
   it("callPending", () => {
     let count = 0;
-    const fn = jest.fn(props => {
+    const fn = jest.fn((props: number) => {
       count = props;
     });
     const { result } = renderHook(() => useThrottleFn(fn, 200));
@@ -125,14 +125,14 @@ describe("useThrottleFn", () => {
     expect(count).toEqual(0);
     expect(fn).toHaveBeenCalledTimes(0);
 
-    act(() => {
+    void act(() => {
       result.current.callPending();
     });
 
     expect(count).toEqual(3);
     expect(fn).toHaveBeenCalledTimes(1);
 
-    act(() => {
+    void act(() => {
       result.current.callPending();
     });
 

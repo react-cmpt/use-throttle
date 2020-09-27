@@ -26,13 +26,13 @@ describe("useThrottle", () => {
   it("Init", () => {
     let hook: RenderHookResult<number, number>;
 
-    act(() => {
-      hook = renderHook(props => useThrottle(props, 200), {
+    void act(() => {
+      hook = renderHook((props: number) => useThrottle(props, 200), {
         initialProps: 0,
       });
     });
 
-    act(() => {
+    void act(() => {
       hook.rerender();
       expect(hook.result.current).toEqual(0);
 
@@ -58,13 +58,16 @@ describe("useThrottle", () => {
   it("Options: leading", () => {
     let hook: RenderHookResult<number, number>;
 
-    act(() => {
-      hook = renderHook(props => useThrottle(props, 200, { leading: true }), {
-        initialProps: 0,
-      });
+    void act(() => {
+      hook = renderHook(
+        (props: number) => useThrottle(props, 200, { leading: true }),
+        {
+          initialProps: 0,
+        }
+      );
     });
 
-    act(() => {
+    void act(() => {
       hook.rerender();
       expect(hook.result.current).toEqual(0);
 
