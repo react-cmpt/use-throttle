@@ -42,23 +42,31 @@ throttled value
     <td>The number of milliseconds to throttle invocations to.</td>
   </tr>
   <tr>
-    <td rowspan="1">options</td>
+    <td rowspan="2">options</td>
     <td>leading</td>
     <td>boolean</td>
     <td>-</td>
     <td>Specify invoking on the leading edge of the timeout.</td>
   </tr>
+  <tr>
+    <td>customizer</td>
+    <td>function</td>
+    <td>-</td>
+    <td>The function to customize comparisons.</td>
+  </tr>
 </table>
 
-| return | type | explain                          |
-| ------ | ---- | -------------------------------- |
-| value  | any  | Returns the new throttled value. |
+| return      | type     | explain                          |
+| ----------- | -------- | -------------------------------- |
+| value       | any      | Returns the new throttled value. |
+| cancel      | function | The clear timer function.        |
+| callPending | function | The callback manually function.  |
 
 ```tsx
 import { useThrottle } from "@react-cmpt/use-throttle";
 
 const Demo = ({ value }) => {
-  const tValue = useThrottle(value, 200);
+  const [tValue, { cancel, callPending }] = useThrottle(value, 200);
 
   // ...
 };
@@ -106,7 +114,7 @@ throttled function
 import { useThrottleFn } from "@react-cmpt/use-throttle";
 
 const Demo = () => {
-  const { callback, cancel } = useThrottleFn(() => {
+  const { callback, cancel, callPending } = useThrottleFn(() => {
     console.log("click");
   }, 200);
 
