@@ -1,3 +1,18 @@
+# [0.3.0](https://github.com/react-cmpt/use-throttle/compare/v0.2.2...v0.3.0) (2020-09-29)
+
+
+### Features
+
+- **useThrottle:** `customizer` option and returns ([442b42f](https://github.com/react-cmpt/use-throttle/commit/442b42f7818f8d7ad61800c859d2f37066ae9c84))
+  1. type: add `ThrottleOptions`;
+  2. options: `customizer` (The function to customize comparisons);
+  3. returns: value -> object. (`[T, ControlFunctions]`).
+- **useThrottleFn:** split returns and rename options type ([c0938da](https://github.com/react-cmpt/use-throttle/commit/c0938da40151eca5606be52e65c2847f47a0c597))
+  1. type: `ThrottleOptions` -> `ThrottleFnOptions`;
+  2. type: `ThrottleReturnResult` -> `ControlFunctions` + `ThrottleReturnResult`.
+
+
+
 ## [0.2.2](https://github.com/react-cmpt/use-throttle/compare/v0.2.1...v0.2.2) (2020-06-28)
 
 
