@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/react-cmpt/use-throttle/compare/v0.3.0...v0.3.1) (2021-04-05)
+
+
+### Features
+
+* export `ControlFunctions` type. ([ef17e26](https://github.com/react-cmpt/use-throttle/commit/ef17e2671676bc20d195ebfc7d12f4592326bf28))
+
+
+
 # [0.3.0](https://github.com/react-cmpt/use-throttle/compare/v0.2.2...v0.3.0) (2020-09-29)
 
 
