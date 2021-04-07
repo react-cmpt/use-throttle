@@ -5,11 +5,11 @@ import useThrottleFn, {
   ControlFunctions,
 } from "./useThrottleFn";
 
-export {
-  useThrottle,
+export type {
   ThrottleOptions,
-  useThrottleFn,
   ThrottleFnOptions,
   ThrottleReturnResult,
   ControlFunctions,
 };
+
+export { useThrottle, useThrottleFn };
