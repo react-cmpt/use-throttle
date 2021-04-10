@@ -1,3 +1,12 @@
+## [0.3.2](https://github.com/react-cmpt/use-throttle/compare/v0.3.1...v0.3.2) (2021-04-10)
+
+
+### Features
+
+* export types separately. ([c3fbd6e](https://github.com/react-cmpt/use-throttle/commit/c3fbd6e042ab47ef88af0dd4f0507aca35502d93))
+
+
+
 ## [0.3.1](https://github.com/react-cmpt/use-throttle/compare/v0.3.0...v0.3.1) (2021-04-05)
 
 
