@@ -45,7 +45,7 @@ throttled value
     <td rowspan="2">options</td>
     <td>leading</td>
     <td>boolean</td>
-    <td>-</td>
+    <td><code>false</code></td>
     <td>Specify invoking on the leading edge of the timeout.</td>
   </tr>
   <tr>
@@ -99,7 +99,7 @@ throttled function
     <td rowspan="1">options</td>
     <td>leading</td>
     <td>boolean</td>
-    <td>-</td>
+    <td><code>false</code></td>
     <td>Specify invoking on the leading edge of the timeout.</td>
   </tr>
 </table>
