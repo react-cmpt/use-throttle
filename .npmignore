@@ -8,6 +8,7 @@
 /src
 /example
 /tests
+coverage
 
 npm-debug.log*
 yarn-debug.log*
