@@ -1,10 +1,7 @@
-import {
-  renderHook,
-  act,
-  RenderHookResult,
-} from "@testing-library/react-hooks";
+import type { RenderHookResult } from "@testing-library/react-hooks";
+import { renderHook, act } from "@testing-library/react-hooks";
 
-import { ControlFunctions } from "../src/useThrottleFn";
+import type { ControlFunctions } from "../src/useThrottleFn";
 import useThrottle from "../src/useThrottle";
 
 describe("useThrottle", () => {

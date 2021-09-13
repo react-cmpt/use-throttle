@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import useThrottleFn, {
-  ThrottleFnOptions,
-  ControlFunctions,
-} from "./useThrottleFn";
+
+import type { ThrottleFnOptions, ControlFunctions } from "./useThrottleFn";
+import useThrottleFn from "./useThrottleFn";
 
 const valueComparison = <T>(left: T, right: T) => !(left === right);
 
