@@ -96,7 +96,14 @@ describe("useThrottle", () => {
     });
     expect(result.current.value).toEqual(5);
 
+    act(() => {
+      result.current.callback(6);
+      jest.advanceTimersByTime(200);
+    });
+
     unmount();
+
+    expect(result.current.value).toEqual(5);
   });
 
   it("Options: leading", () => {
@@ -208,5 +215,43 @@ describe("useThrottle", () => {
     expect(result.current[0]).toEqual(7);
 
     unmount();
+  });
+});
+
+describe("useThrottle", () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.runOnlyPendingTimers();
+    jest.clearAllMocks();
+    jest.clearAllTimers();
+    jest.useRealTimers();
+  });
+
+  it("0ms", () => {
+    const { rerender, result } = renderHook(
+      (props: number) => useThrottle(props),
+      {
+        initialProps: 0,
+      }
+    );
+
+    rerender();
+    expect(result.current[0]).toEqual(0);
+
+    rerender(1);
+    act(() => {
+      jest.advanceTimersByTime(0);
+    });
+    expect(result.current[0]).toEqual(1);
+
+    rerender(2);
+    rerender(3);
+    act(() => {
+      jest.advanceTimersByTime(0);
+    });
+    expect(result.current[0]).toEqual(3);
   });
 });

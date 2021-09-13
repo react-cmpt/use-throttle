@@ -139,4 +139,26 @@ describe("useThrottleFn", () => {
     expect(count).toEqual(3);
     expect(fn).toHaveBeenCalledTimes(1);
   });
+
+  it("0ms", () => {
+    let count = 0;
+    const fn = jest.fn((props: number) => {
+      count = props;
+    });
+    const { result } = renderHook(() => useThrottleFn(fn));
+
+    expect(count).toEqual(0);
+    expect(fn).toHaveBeenCalledTimes(0);
+
+    result.current.callback(1);
+    jest.advanceTimersByTime(0);
+    expect(count).toEqual(1);
+    expect(fn).toHaveBeenCalledTimes(1);
+
+    result.current.callback(2);
+    result.current.callback(3);
+    jest.advanceTimersByTime(0);
+    expect(count).toEqual(3);
+    expect(fn).toHaveBeenCalledTimes(2); // to be discussed
+  });
 });
