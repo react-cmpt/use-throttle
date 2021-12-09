@@ -5,6 +5,7 @@ The throttled value / function hook for react
 [![CI](https://github.com/react-cmpt/use-throttle/workflows/CI/badge.svg?branch=master)](https://github.com/react-cmpt/use-throttle/actions?query=workflow%3ACI)
 [![npm](https://img.shields.io/npm/v/@react-cmpt/use-throttle.svg)](https://www.npmjs.com/package/@react-cmpt/use-throttle)
 [![GitHub license](https://img.shields.io/github/license/react-cmpt/use-throttle)](https://github.com/react-cmpt/use-throttle/blob/master/LICENSE)
+[![minzip](https://badgen.net/bundlephobia/minzip/@react-cmpt/use-throttle)](https://bundlephobia.com/package/@react-cmpt/use-throttle)
 
 ## Usage
 
