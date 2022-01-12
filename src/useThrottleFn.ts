@@ -30,7 +30,7 @@ export default function useThrottleFn<T extends any[]>(
   const timer = useRef<ReturnType<typeof setTimeout>>();
   const fnRef = useRef(fn);
   const optionsRef = useRef<ThrottleFnOptions | undefined>(options);
-  const currentArgs = useRef<any>();
+  const currentArgs = useRef<T>();
 
   fnRef.current = fn;
   optionsRef.current = options;
@@ -55,7 +55,7 @@ export default function useThrottleFn<T extends any[]>(
           }, wait);
         } else {
           timer.current = setTimeout(() => {
-            fnRef.current(...currentArgs.current);
+            fnRef.current(...(currentArgs.current as T));
             timer.current = undefined;
           }, wait);
         }
@@ -69,7 +69,7 @@ export default function useThrottleFn<T extends any[]>(
       return;
     }
 
-    fnRef.current(...currentArgs.current);
+    fnRef.current(...(currentArgs.current as T));
     cancel();
   }, [cancel]);
 
