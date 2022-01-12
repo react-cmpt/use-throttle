@@ -1,3 +1,12 @@
+## [0.3.3](https://github.com/react-cmpt/use-throttle/compare/v0.3.2...v0.3.3) (2022-01-12)
+
+
+### Features
+
+* **useThrottleFn:** support typescript 4.5. ([04920c0](https://github.com/react-cmpt/use-throttle/commit/04920c040220d0f35bf71b620df7cb514431788c))
+
+
+
 ## [0.3.2](https://github.com/react-cmpt/use-throttle/compare/v0.3.1...v0.3.2) (2021-04-10)
 
 
